@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Kütüphaneler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- json-server
+- bootstrap
+- axios@^0.27.2
+- @testing-library/user-event@14.0
 
-## Available Scripts
+# Selectors - Seçiciler
+- Test içerisinde jsx elementlerini çağırmaya yarayan metodlardır
+- screen nesnesi aracılığıyla kullanılır
+- https://testing-library.com/docs/queries/byrole
+# HTML element rolleri
+- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
 
-In the project directory, you can run:
+- Her html elementinin kendine ait rolleri vardır bu roller bazılarında etiket ismi ile aynı bazılarında ise farklı olabilir
 
-### `npm start`
+# Matchers - Kontrolcüler
+- expect komutu ile birlikte kullanılan bir  elementin üzerindeki beklentimizi konrol eden methodlardır. (rengi kırmızıdır | input tiklenmiştir | buton aktiftir | yazı içeriği sudur | fonksiyon çagrılmıstır | dizinin uzunluğu 5 tir vb.)
+- element kontrolleri
+- https://github.com/testing-library/jest-dom
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- diğer kontroller
+- https://jestjs.io/docs/using-matchers
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Test Geliştirme Süreçleri
 
-### `npm test`
+## TDD (Test driven Development)
+- Önce testler yazılır sonra işlevler yazılır.
+- red to green
+- Artısı ,testler bir yük gelmez. Geliştirme sürecinin bir parçası oluyor. Testleri yazarken dinamik yapının algoritmasını oluşturduğumuz için işlevi daha hızlı kodlarız
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## BDD (Behaviour Driven Development)
 
-### `npm run build`
+- Önce özellik / işlev geliştirilir daha sonra tesleri yazılır
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 100% test covarage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# FireEvent
+- react testing lib içerisinde gelen olay tetikleme metodu
+- gercek kullanıcıdan uzak tepkiler kullandıgı için günümüzde UserEvent e bıraktık
+- tetiklenen olaylar gerçek bir insanın tepkisinden çok daha hızlı bir şekilde gerceklestigi için testlerde tutarsızlıklara ve beklenmedik yollara neden olabiliyor
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# UserEvent
+- fireEvent in gelismis versiyonu
+- tetiklediğimiz olaylar fireevent gibi doğrudan tetiklenmsei yerine gerçek bir kullanıcıyı simüle ederek belirli bir gecikmenin ardından tetiklenir
+- kullanılması için kütüphanenin projeye kurulması gerekir
+- async calıstıgı için async await kullanılır
 
-### `npm run eject`
+# Özellikler
+- Card Bileşeni: Miktar, başlık ve fotoğraf gibi prop'ların ekrana doğru şekilde yansıdığını test ettik. Ayrıca, butonların doğru şekilde çalıştığını ve fonksiyonların beklenen parametrelerle çağrıldığını doğruladık.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Scoops Bileşeni: API'den alınan dondurma çeşitlerinin ekranda doğru şekilde görüntülendiğini ve sepete ekleme/çıkarma işlemlerinin toplam fiyat üzerindeki etkilerini test ettik.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Toppings Bileşeni: Sosların eklenmesi ve çıkarılmasının toplam fiyata etkisini inceledik, checkbox etkileşimlerini test ettik.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Form Bileşeni: Koşul onaylama ve buton aktifliği durumlarını test ettik. Butonun hover durumunda bildirim gösterip göstermediğini de kontrol ettik.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# GIF
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![](download.gif)
